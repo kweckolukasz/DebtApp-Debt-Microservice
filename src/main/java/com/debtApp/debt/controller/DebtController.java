@@ -1,10 +1,10 @@
 package com.debtApp.debt.controller;
 
 import com.debtApp.debt.model.DebtItem;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,12 +12,14 @@ import java.util.List;
 @RestController
 public class DebtController {
 
-    @GetMapping("/debt/{id}")
+
+    @RequestMapping("${env}/debt/{id}")
     DebtItem getDebtItemById(@PathVariable("id") int id) {
+
         return new DebtItem(id);
     }
 
-    @GetMapping("/debtsIds")
+    @RequestMapping("${env}/debtsIds")
     List<Integer> getDebtsIds(@RequestParam("id") int id) {
         return Arrays.asList(id + 1, id + 2, id + 3);
     }
