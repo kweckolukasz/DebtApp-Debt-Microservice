@@ -1,4 +1,4 @@
-package com.debtApp.debt.controller;
+package com.debtApp.debt.service;
 
 import com.debtApp.debt.model.DebtItem;
 import org.slf4j.Logger;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class DebtController {
+public class DebtService {
 
 
     @RequestMapping("${env}/debt/{id}")
