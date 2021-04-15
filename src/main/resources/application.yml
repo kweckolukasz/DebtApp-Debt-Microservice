@@ -1,2 +1,10 @@
 server:
   port: 8081
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+
+spring:
+  application:
+    name: debt
