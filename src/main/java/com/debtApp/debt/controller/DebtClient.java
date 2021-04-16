@@ -19,15 +19,15 @@ public class DebtClient {
     Logger log = LoggerFactory.getLogger(DebtClient.class.getSimpleName());
 
     @Autowired
-    WebClient webClient;
+    WebClient.Builder webClientBuilder;
 
     @Value("${env}")
     private String env;
 
     @RequestMapping("/client/{id}")
     DebtItem getDebtItemById(@PathVariable("id") int id){
-        log.info("inside get client by id");
-        Mono<DebtItem> result = webClient.get()
+        log.info("Access /client/id");
+        Mono<DebtItem> result = webClientBuilder.build().get()
                 .uri(env+"/debt/{id}",id)
                 .retrieve()
                 .bodyToMono(DebtItem.class);
