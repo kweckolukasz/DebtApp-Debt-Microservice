@@ -1,9 +1,23 @@
 package com.debtApp.debt.model;
 
+import javax.persistence.*;
+
+@Entity
 public class DebtItem {
 
-    private int Id = 0;
-    private String owner = "some debt owner";
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int Id;
+
+    @Column(nullable = false)
+    private String creditor;
+
+    @Column(nullable = false)
+    private String debtor;
+
+    @Column(nullable = false)
+    private int groupId;
+
 
     public DebtItem(int id) {
         Id = id;
@@ -11,6 +25,7 @@ public class DebtItem {
 
     public DebtItem() {
     }
+
 
     public int getId() {
         return Id;
@@ -20,11 +35,27 @@ public class DebtItem {
         Id = id;
     }
 
-    public String getOwner() {
-        return owner;
+    public String getCreditor() {
+        return creditor;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setCreditor(String creditor) {
+        this.creditor = creditor;
+    }
+
+    public String getDebtor() {
+        return debtor;
+    }
+
+    public void setDebtor(String debtor) {
+        this.debtor = debtor;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 }

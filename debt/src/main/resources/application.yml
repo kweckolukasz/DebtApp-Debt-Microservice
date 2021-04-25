@@ -13,3 +13,10 @@ spring:
   application:
     name: debt
 
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        tool:
+          hbm2ddl: DEBUG
