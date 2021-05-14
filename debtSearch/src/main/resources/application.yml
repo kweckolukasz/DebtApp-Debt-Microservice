@@ -1,0 +1,14 @@
+server:
+  port: 8085
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    appname: debtSearch
+  client:
+    enabled: false
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  application:
+    name: debt

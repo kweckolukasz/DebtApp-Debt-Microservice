@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "0",
+    "creditorId": 1,
+    "debtorId": 2,
+    "groupId": 1,
+    "value": 20
+  },
+  {
+    "_id": "1",
+    "creditorId": 1,
+    "debtorId": 3,
+    "groupId": 1,
+    "value": 20
+  },
+  {
+    "_id": "2",
+    "creditorId": 2,
+    "debtorId": 3,
+    "groupId": 1,
+    "value": 40
+  },
+  {
+    "_id": "3",
+    "creditorId": 3,
+    "debtorId": 4,
+    "groupId": 2,
+    "value": 100
+  }
+]
