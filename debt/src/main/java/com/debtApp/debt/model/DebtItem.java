@@ -1,22 +1,26 @@
 package com.debtApp.debt.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class DebtItem {
+public class DebtItem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
     @Column(nullable = false)
-    private String creditor;
+    private int creditorId;
 
     @Column(nullable = false)
-    private String debtor;
+    private int debtorId;
 
     @Column(nullable = false)
     private int groupId;
+
+    @Column(nullable = false)
+    private int value;
 
 
     public DebtItem(int id) {
@@ -26,7 +30,6 @@ public class DebtItem {
     public DebtItem() {
     }
 
-
     public int getId() {
         return Id;
     }
@@ -35,20 +38,20 @@ public class DebtItem {
         Id = id;
     }
 
-    public String getCreditor() {
-        return creditor;
+    public int getCreditorId() {
+        return creditorId;
     }
 
-    public void setCreditor(String creditor) {
-        this.creditor = creditor;
+    public void setCreditorId(int creditorId) {
+        this.creditorId = creditorId;
     }
 
-    public String getDebtor() {
-        return debtor;
+    public int getDebtorId() {
+        return debtorId;
     }
 
-    public void setDebtor(String debtor) {
-        this.debtor = debtor;
+    public void setDebtorId(int debtorId) {
+        this.debtorId = debtorId;
     }
 
     public int getGroupId() {
@@ -57,5 +60,13 @@ public class DebtItem {
 
     public void setGroupId(int groupId) {
         this.groupId = groupId;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }
