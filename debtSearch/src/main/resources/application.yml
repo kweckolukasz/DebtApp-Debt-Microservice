@@ -12,3 +12,6 @@ eureka:
 spring:
   application:
     name: debt
+  data:
+    mongodb:
+      database: debtApp

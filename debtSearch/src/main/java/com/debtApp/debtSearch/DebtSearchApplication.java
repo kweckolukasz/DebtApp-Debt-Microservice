@@ -1,5 +1,8 @@
 package com.debtApp.debtSearch;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
@@ -56,4 +59,13 @@ public class DebtSearchApplication {
                     .clientConnector(new ReactorClientHttpConnector(httpClient));
         }
     }
+
+    @Configuration
+    class DatabaseConfiguration{
+        MongoClient mongoClient = MongoClients.create(
+                "mongodb+srv://kwecko:<Drumheads14>@sandbox.elvwf.mongodb.net/debtApp?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("debtApp");
+
+    }
+
 }
